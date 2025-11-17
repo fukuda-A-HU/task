@@ -7,36 +7,16 @@ body:
     attributes:
       value: |
         ## デイリータスク
-
-        今日のタスクを記録してください。
+        優先度はラベルで設定してください（priority:high / priority:medium / priority:low）
 
   - type: textarea
     id: tasks
     attributes:
       label: タスク一覧
-      description: 今日やるべきタスクを箇条書きで記入してください
       placeholder: |
         - [ ] タスク1
         - [ ] タスク2
         - [ ] タスク3
-    validations:
-      required: true
-
-  - type: textarea
-    id: notes
-    attributes:
-      label: メモ・備考
-      description: その他のメモや備考があれば記入してください
-      placeholder: 特記事項や注意点など
-
-  - type: dropdown
-    id: priority
-    attributes:
-      label: 優先度
-      options:
-        - 高
-        - 中
-        - 低
     validations:
       required: true
 
