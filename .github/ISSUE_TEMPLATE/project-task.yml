@@ -1,0 +1,94 @@
+name: プロジェクトタスク
+description: プロジェクトごとのタスクを管理するためのテンプレート（子タスク付き）
+title: "[Project] "
+labels: ["project", "task"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## プロジェクトタスク
+
+        プロジェクト単位でタスクを管理します。子タスクはチェックボックス形式で記入してください。
+
+  - type: input
+    id: project_name
+    attributes:
+      label: プロジェクト名
+      placeholder: 例: Webサイトリニューアル
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: プロジェクト概要
+      description: プロジェクトの目的や概要を記入してください
+      placeholder: このプロジェクトの目的や概要を説明してください
+    validations:
+      required: true
+
+  - type: textarea
+    id: main_tasks
+    attributes:
+      label: メインタスク
+      description: プロジェクトの主要なタスクを記入してください
+      placeholder: |
+        - [ ] タスク1
+        - [ ] タスク2
+        - [ ] タスク3
+    validations:
+      required: true
+
+  - type: textarea
+    id: subtasks
+    attributes:
+      label: 子タスク
+      description: 各メインタスクの詳細な子タスクを記入してください（メインタスクごとにグループ化してください）
+      placeholder: |
+        ## タスク1の子タスク
+        - [ ] 子タスク1-1
+        - [ ] 子タスク1-2
+        
+        ## タスク2の子タスク
+        - [ ] 子タスク2-1
+        - [ ] 子タスク2-2
+
+  - type: dropdown
+    id: status
+    attributes:
+      label: ステータス
+      options:
+        - 未着手
+        - 進行中
+        - レビュー中
+        - 完了
+      default: 0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 優先度
+      options:
+        - 高
+        - 中
+        - 低
+      default: 1
+    validations:
+      required: true
+
+  - type: input
+    id: deadline
+    attributes:
+      label: 期限
+      placeholder: YYYY-MM-DD
+      description: プロジェクトの期限があれば記入してください
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: メモ・備考
+      description: その他のメモや備考があれば記入してください
+      placeholder: 関連情報や注意点など
+
