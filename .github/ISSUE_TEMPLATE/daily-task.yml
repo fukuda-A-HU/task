@@ -7,7 +7,7 @@ body:
     attributes:
       value: |
         ## デイリータスク
-        優先度はラベルで設定してください（priority:high / priority:medium / priority:low）
+        優先度はラベルで設定してください。
 
   - type: textarea
     id: tasks
@@ -29,4 +29,3 @@ body:
         ${{ date }}
     validations:
       required: true
-

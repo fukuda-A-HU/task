@@ -1,0 +1,22 @@
+name: 自動ラベル付与
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  add-labels:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Issueにラベルを追加
+        uses: actions-cool/issues-helper@v3
+        with:
+          actions: 'add-labels'
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue-number: ${{ github.event.issue.number }}
+          labels: |
+            daily
+            task
+
